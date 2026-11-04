@@ -170,7 +170,6 @@ export GEMINI_MODEL=gemini-3.5-flash
 - Recorded rentals understate true peak demand (failed rentals aren't logged), so the fleet estimate is a **floor**.
 - Trip lengths (12 / 30 min) and the parked-bike buffer (1.5) are assumptions; the sensitivity table shows their effect.
 - The model has seen only 2011–2012. Later dates are forecast at 2012 levels unless a growth % is given.
-- The Gemini agent was tested end to end with a scripted stand-in model, but not yet against live Gemini.
 
 ---
 
