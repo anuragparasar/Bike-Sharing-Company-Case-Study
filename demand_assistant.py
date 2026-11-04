@@ -1,7 +1,7 @@
 """Natural-language demand assistant for the operations manager.
 
 Answers questions like "How many bikes do we need next Friday at 6pm if it rains?" from the
-Part 3 model (models/bike_demand.joblib). Two modes share the same tool functions:
+Part 3 model (Model/bike_demand.joblib). Two modes share the same tool functions:
 
 - offline (default): a rule-based parser maps the question to a tool call. No API key needed,
   fully deterministic, so every answer can be traced back to a model output.
@@ -25,8 +25,8 @@ import pandas as pd
 import bike_model as bm
 
 HERE = Path(__file__).parent
-MODEL = joblib.load(HERE / "models" / "bike_demand.joblib")
-HOUR = pd.read_csv(HERE / "hour.csv", parse_dates=["dteday"])
+MODEL = joblib.load(HERE / "Model" / "bike_demand.joblib")
+HOUR = pd.read_csv(HERE / "Dataset" / "hour.csv", parse_dates=["dteday"])
 HOUR["in_use"] = bm.bikes_in_use(HOUR.registered, HOUR.casual)
 HOUR["temp_c"] = HOUR.temp * 41
 HOUR["hum_pct"] = HOUR.hum.replace(0, np.nan) * 100
